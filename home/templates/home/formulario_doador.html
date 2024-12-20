@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="form-title">Cadastre seus dados como Doador(a)</h2>
+    <form method="post" class="form-container">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<style>
+    /* Estilização Geral */
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group p {
+        margin: 0;
+    }
+
+    .form-container input, 
+    .form-container select, 
+    .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-container label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}

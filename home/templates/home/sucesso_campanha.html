@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucesso!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <p>Criador: {{ criador }}</p>
+    <p>ID do Criador: {{ criador.id }}</p>
+    <p>Nome do Criador: {{ criador.nome }}</p>
+    <h1>Campanha Criada com Sucesso!</h1>
+    <p>Obrigado por contribuir com a nossa plataforma, {{ criador.nome }}!</p>
+    <a href="{% url 'perfil_criador' criador.id %}" class="btn">Ir para o meu perfil</a>
+</body>
+</html>

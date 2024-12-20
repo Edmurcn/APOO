@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Criador</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .info strong {
+            color: #333;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background-color: #a71d2a;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil do Criador de Campanha</h1>
+
+        <div class="info">
+            <p><strong>Nome:</strong> {{ criador.nome }}</p>
+            <p><strong>Email:</strong> {{ criador.email }}</p>
+        </div>
+
+        <div class="btn-container">
+            <!-- Botão para criar uma nova campanha -->
+            <a href="{% url 'criar_campanha' criador.id %}" class="btn">Criar Nova Campanha</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Campanhas</p>
+    </footer>
+</body>
+</html>
